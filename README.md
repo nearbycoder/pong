@@ -4,6 +4,8 @@ A classic HTML5 Pong game with a CPU opponent, featuring retro styling and moder
 
 ![Pong Game](https://img.shields.io/badge/HTML5-Game-green) ![Canvas](https://img.shields.io/badge/Canvas-Retro-blue) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+![Screenshot](screenshot.png)
+
 ## Features
 
 - **Classic Gameplay**: Traditional pong mechanics with a retro aesthetic
@@ -27,6 +29,10 @@ A classic HTML5 Pong game with a CPU opponent, featuring retro styling and moder
 - First player to score 11 points wins
 - Ball speeds up with each paddle hit
 - Hit the ball with different parts of your paddle to change the angle
+
+## Live Demo
+
+Play the game at: **[https://pong-labs.vercel.app](https://pong-labs.vercel.app)**
 
 ## Installation & Running
 
