@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+}
+
+#game-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#score-display {
+    color: #fff;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+    letter-spacing: 4px;
+}
+
+#score-display .divider {
+    margin: 0 30px;
+    opacity: 0.5;
+}
+
+#game-canvas {
+    border: 4px solid #fff;
+    background-color: #000;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+#overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    pointer-events: none;
+}
+
+#overlay h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    text-shadow: 4px 4px 8px rgba(255, 255, 255, 0.5);
+    letter-spacing: 8px;
+}
+
+#overlay p {
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+#mobile-controls {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 16px;
+    opacity: 0.6;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #score-display {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    #score-display .divider {
+        margin: 0 20px;
+    }
+
+    #overlay h1 {
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+
+    #overlay p {
+        font-size: 16px;
+    }
+
+    #mobile-controls {
+        display: block;
+    }
+
+    #game-canvas {
+        border-width: 2px;
+    }
+}
