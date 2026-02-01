@@ -5,6 +5,8 @@ const overlayTitle = document.getElementById('overlay-title');
 const overlaySubtitle = document.getElementById('overlay-subtitle');
 const playerScoreEl = document.getElementById('player-score');
 const cpuScoreEl = document.getElementById('cpu-score');
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
 
 const WINNING_SCORE = 11;
 const INITIAL_BALL_SPEED = 8;
@@ -15,6 +17,36 @@ const CPU_ERROR_MARGIN = 25;
 
 let gameState = 'menu';
 let animationId;
+
+const themes = ['retro', 'modern', 'neon', 'light'];
+let currentThemeIndex = 0;
+
+function getThemeColors() {
+    const styles = getComputedStyle(document.body);
+    return {
+        bg: styles.getPropertyValue('--game-bg').trim(),
+        element: styles.getPropertyValue('--game-element').trim(),
+        line: styles.getPropertyValue('--game-line').trim()
+    };
+}
+
+function cycleTheme() {
+    body.classList.remove(`theme-${themes[currentThemeIndex]}`);
+    currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+    body.classList.add(`theme-${themes[currentThemeIndex]}`);
+    localStorage.setItem('pong-theme', themes[currentThemeIndex]);
+}
+
+function initTheme() {
+    const savedTheme = localStorage.getItem('pong-theme');
+    if (savedTheme && themes.includes(savedTheme)) {
+        currentThemeIndex = themes.indexOf(savedTheme);
+        body.classList.add(`theme-${savedTheme}`);
+    }
+}
+
+initTheme();
+themeToggle.addEventListener('click', cycleTheme);
 
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
@@ -237,11 +269,13 @@ function updateScore() {
 }
 
 function draw() {
-    ctx.fillStyle = '#000';
+    const colors = getThemeColors();
+    
+    ctx.fillStyle = colors.bg;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
     ctx.setLineDash([10, 10]);
-    ctx.strokeStyle = '#333';
+    ctx.strokeStyle = colors.line;
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(canvas.width / 2, 0);
@@ -249,7 +283,7 @@ function draw() {
     ctx.stroke();
     ctx.setLineDash([]);
     
-    ctx.fillStyle = '#fff';
+    ctx.fillStyle = colors.element;
     ctx.fillRect(player.x, player.y, paddleWidth, paddleHeight);
     ctx.fillRect(cpu.x, cpu.y, paddleWidth, paddleHeight);
     
