@@ -15,6 +15,27 @@ A classic HTML5 Pong game with a CPU opponent, featuring retro styling and moder
 - **Sound Effects**: Retro-style sounds using Web Audio API
 - **Mobile Support**: Touch controls for playing on mobile devices
 - **Responsive Design**: Adapts to different screen sizes automatically
+- **Theme Switcher**: Multiple visual themes to customize your gaming experience
+
+## Themes
+
+The game includes 4 unique themes that you can switch between by clicking the theme toggle button (◐) in the header:
+
+### 🎮 Retro (Default)
+![Retro Theme](screenshot-retro.png)
+Classic black and white styling with authentic arcade feel
+
+### 🎨 Modern
+![Modern Theme](screenshot-modern.png)
+Dark blue/purple theme with vibrant red accents
+
+### ⚡ Neon
+![Neon Theme](screenshot-neon.png)
+High-contrast neon green on black for maximum visibility
+
+### ☀️ Light
+![Light Theme](screenshot-light.png)
+Clean white theme with dark elements for daytime play
 
 ## How to Play
 
