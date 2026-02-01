@@ -8,11 +8,13 @@
 </head>
 <body>
     <div id="game-container">
-        <button id="theme-toggle" aria-label="Toggle theme">🎨</button>
-        <div id="score-display">
-            <span id="player-score">0</span>
-            <span class="divider">-</span>
-            <span id="cpu-score">0</span>
+        <div id="game-header">
+            <div id="score-display">
+                <span id="player-score">0</span>
+                <span class="divider">-</span>
+                <span id="cpu-score">0</span>
+            </div>
+            <button id="theme-toggle" aria-label="Toggle theme" title="Switch theme">◐</button>
         </div>
         <canvas id="game-canvas"></canvas>
         <div id="overlay">
